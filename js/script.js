@@ -24,6 +24,32 @@ $(document).on("click", function () {
   document.getElementById("my_audio").play();
   console.log("Shaadi me zaroor aana");
 });
+document.getElementById("my_audio").play();
+
+// Play the audio automatically when the page loads
+// Play the audio automatically when the page loads
+function playAudio() {
+  const audio = document.getElementById("my_audio");
+
+  audio
+    .play()
+    .then(() => {
+      console.log("Audio is playing");
+    })
+    .catch((error) => {
+      console.log(
+        "Audio playback failed. User interaction may be required:",
+        error
+      );
+    });
+}
+playAudio();
+window.onscroll = function () {
+  playAudio();
+};
+
+// Play the audio on page load
+window.onload = function () {};
 
 // Set the date we're counting down to
 var countDownDate = new Date("Oct 27, 2024 00:00:00").getTime();
